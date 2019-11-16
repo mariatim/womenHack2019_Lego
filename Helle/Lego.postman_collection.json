@@ -1,0 +1,182 @@
+{
+	"info": {
+		"_postman_id": "824dfa25-2997-4406-bb86-7900be89c025",
+		"name": "Lego",
+		"schema": "https://schema.getpostman.com/json/collection/v2.1.0/collection.json"
+	},
+	"item": [
+		{
+			"name": "Get Aliases",
+			"request": {
+				"method": "GET",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "add your api key",
+						"type": "text"
+					}
+				],
+				"url": {
+					"raw": "https://services.slingshot.lego.com/api/v3/_cat/aliases",
+					"protocol": "https",
+					"host": [
+						"services",
+						"slingshot",
+						"lego",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"_cat",
+						"aliases"
+					],
+					"query": [
+						{
+							"key": "",
+							"value": "",
+							"disabled": true
+						}
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search videos ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "add your api key",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"size\": 150,\n    \"query\": {\n        \"bool\": {\n            \"filter\": {\n                \"bool\": {\n                    \"must\": [\n                        {\n                            \"term\": {\n                                \"language\": \"en-US\"\n                            }\n                        },\n                        {\n                            \"term\": {\n                                \"themes.name\": \"Friends\"\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://services.slingshot.lego.com/api/v3/video/_search",
+					"protocol": "https",
+					"host": [
+						"services",
+						"slingshot",
+						"lego",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"video",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search character",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "add your api key",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"size\": 1000,\n    \"query\": {\n        \"bool\": {\n            \"filter\": {\n                \"bool\": {\n                    \"must\": [\n                        {\n                            \"term\": {\n                                \"language\": \"en-US\"\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://services.slingshot.lego.com/api/v3/character/_search",
+					"protocol": "https",
+					"host": [
+						"services",
+						"slingshot",
+						"lego",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"character",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		},
+		{
+			"name": "Search product  ",
+			"request": {
+				"method": "POST",
+				"header": [
+					{
+						"key": "x-api-key",
+						"value": "add your api key",
+						"type": "text"
+					},
+					{
+						"key": "Content-Type",
+						"name": "Content-Type",
+						"value": "application/json",
+						"type": "text"
+					}
+				],
+				"body": {
+					"mode": "raw",
+					"raw": "{\n    \"size\": 500,\n    \"query\": {\n        \"bool\": {\n            \"filter\": {\n                \"bool\": {\n                    \"must\": [\n                        {\n                            \"term\": {\n                                \"language\": \"en-US\"\n                            }\n                        }\n                    ]\n                }\n            }\n        }\n    }\n}",
+					"options": {
+						"raw": {
+							"language": "json"
+						}
+					}
+				},
+				"url": {
+					"raw": "https://services.slingshot.lego.com/api/v3/product/_search",
+					"protocol": "https",
+					"host": [
+						"services",
+						"slingshot",
+						"lego",
+						"com"
+					],
+					"path": [
+						"api",
+						"v3",
+						"product",
+						"_search"
+					]
+				}
+			},
+			"response": []
+		}
+	],
+	"protocolProfileBehavior": {}
+}
