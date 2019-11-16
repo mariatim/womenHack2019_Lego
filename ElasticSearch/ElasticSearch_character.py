@@ -13,7 +13,7 @@ import os
 if not os.path.exists('images'):
     os.makedirs('images')
 
-with open('response2.json') as json_file:
+with open('response_character_LEGOfriends.json') as json_file:
     data = json.load(json_file)
 
 import urllib.request
